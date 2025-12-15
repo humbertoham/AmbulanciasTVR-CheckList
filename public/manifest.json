@@ -1,0 +1,11 @@
+{
+  "name": "AmbulanciasTVR Check List",
+  "short_name": "Check List",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
