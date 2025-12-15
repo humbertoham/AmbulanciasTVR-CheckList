@@ -481,8 +481,9 @@ export default function CheckListFormPDF() {
   await drawSignatures();
 
   // Descargar
-  const pdfBytes = await pdfDoc.save();
-  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+ const pdfBytes = await pdfDoc.save(); // Uint8Array
+const arrayBuffer = pdfBytes.slice().buffer; // <- fuerza ArrayBuffer (copia)
+const blob = new Blob([arrayBuffer], { type: "application/pdf" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
